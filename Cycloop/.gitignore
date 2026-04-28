@@ -1,0 +1,11 @@
+## Visual Studio e .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+## MAUI específicos
+AppPackages/
+BundleArtifacts/
