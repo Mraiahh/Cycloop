@@ -1,31 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cycloop.MainPage"
+             x:Class="Cycloop.LoginPage"
+             Title="Login Page"
              BackgroundColor="#FFF5F7">
-	<ScrollView>
-		<VerticalStackLayout
+    <ScrollView>
+        <VerticalStackLayout
             Padding="30"
             Spacing="25"
             VerticalOptions="Center">
 
             <Label
                 Text="Cycloop"
-                TextColor="#D81B40"
+                TextColor="#D81B60"
                 FontSize="32"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center" />
 
-            <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
-				<VerticalStackLayout Spacing="10">
-					<Label Text="Seu ciclo atual" FontAttributes="Bold" />
-					<Label Text="Toque no botão abaixo para registrar o início do seu período." TextColor="Gray" />
-				</VerticalStackLayout>
-			</Frame>
+            <Label
+                Text="Cuidando do seu ciclo com você"
+                TextColor="#555555"
+                FontSize="18"
+                HorizontalTextAlignment="Center" />
 
-			<Button
-                x:Name="BtnRegistrar"
-                Text="Registrar Início do Ciclo"
+            <Button
+                x:Name="BtnCadastrar"
+                Text="Criar uma conta"
+                Clicked="OnCriarContaClicked"
                 BackgroundColor="#D81B40"
                 TextColor="White"
                 FontSize="18"
@@ -33,9 +34,9 @@
                 HeightRequest="60"
                 HorizontalOptions="Fill" />
 
-			<Button
-                x:Name="BtnHistorico"
-                Text="Ver Meu Histórico"
+            <Button
+                x:Name="BtnAcessar"
+                Text="Acessar conta existente"
                 BackgroundColor="Transparent"
                 TextColor="#D81B40"
                 BorderColor="#D81B40"
@@ -45,7 +46,7 @@
                 HeightRequest="50"
                 HorizontalOptions="Fill" />
 
-		</VerticalStackLayout>
-	</ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
