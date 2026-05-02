@@ -1,4 +1,6 @@
-﻿namespace Cycloop
+﻿using Windows.UI.WebUI;
+
+namespace Cycloop
 {
     public partial class App : Application
     {
@@ -9,7 +11,16 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            bool hasLoggedIn = Preferences.Default.Get("has_logged_in", false);
+
+            if (hasLoggedIn)
+            {
+                return new Window(new AppShell());
+            }
+            else
+            {
+                return new Window(new NavigationPage(new LoginPage()));
+            }
         }
     }
 }

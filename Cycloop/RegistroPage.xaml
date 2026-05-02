@@ -3,22 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cycloop.RegistroPage"
              Title="RegistroPage">
-    <VerticalStackLayout Padding="30" Spacing="15" VerticalOptions="Center">
+    <ScrollView
+    <VerticalStackLayout 
+        Padding="30" 
+        Spacing="15" 
+        VerticalOptions="Center">
+        
         <Label Text="Boas vindas ao Cycloop!" 
                FontSize="24" 
                HorizontalOptions="Center" 
                TextColor="#D81B40" 
                FontAttributes="Bold"/>
-        <Label Text="Para começarmos, insira seu nome:" 
+        
+        <Label Text="Para começarmos, insira os seguintes dados:" 
                HorizontalOptions="Center" />
 
-        <Entry x:Name="EntNome" Placeholder="Seu nome ou apelido" />
-        <Entry x:Name="EntIdade" Placeholder="Sua idade" Keyboard="Numeric" />
+        <Entry x:Name="EntNome" 
+               Placeholder="Seu nome ou apelido" />
+        
+        <Entry x:Name="EntIdade" 
+               Placeholder="Sua idade" Keyboard="Numeric" />
 
         <Button Text="Acessar" 
                 Clicked="OnLoginClicked" 
                 BackgroundColor="#D81B40" 
                 TextColor="White" 
                 CornerRadius="20" />
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
