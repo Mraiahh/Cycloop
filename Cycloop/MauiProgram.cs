@@ -18,7 +18,7 @@ namespace Cycloop
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddSingleton<Data.DatabaseService>();
             return builder.Build();
         }
     }

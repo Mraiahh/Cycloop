@@ -1,4 +1,4 @@
-namespace Cycloop;
+namespace Cycloop.Views;
 
 public partial class LoginPage : ContentPage
 {
@@ -28,5 +28,10 @@ public partial class LoginPage : ContentPage
 		{
 			await DisplayAlert("Erro", "Email ou senha incorretos. Tente novamente.", "OK");
 		}
+    }
+
+	private bool AutenticarUsuario(string email, string senha)
+	{
+		return !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(senha);
     }
 }

@@ -7,15 +7,14 @@ using SQLite;
 
 namespace Cycloop.Models
 {
-    public class Ciclo
+    public class Usuario
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public DateTime DataInicio { get; set; }
-        public int Duracao { get; set; }
-        public string Intensidade { get; set; } 
-        public string Sintomas { get; set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; } //mudar pra hash depois
 
-        public string cor { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cycloop.LoginPage"
+             x:Class="Cycloop.Views.LoginPage"
              Title="Login Page"
              BackgroundColor="#FFF5F7">
     <ScrollView>
@@ -12,7 +12,7 @@
 
             <Label
                 Text="Cycloop"
-                TextColor="#D81B60"
+                TextColor="#D81B40"
                 FontSize="32"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center" />
@@ -22,6 +22,22 @@
                 TextColor="#555555"
                 FontSize="18"
                 HorizontalTextAlignment="Center" />
+            
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Email"
+                   Keyboard="Email"
+                   TextColor="#D81B40"
+                   BackgroundColor="#FFFFFF"
+                   HeightRequest="50"
+                   HorizontalOptions="Fill" />
+
+            <Entry x:Name="SenhaEntry"
+                   Placeholder="Senha"
+                   IsPassword="True"
+                   TextColor="#D81B40"
+                   BackgroundColor="#FFFFFF"
+                   HeightRequest="50"
+                   HorizontalOptions="Fill" />
 
             <Button
                 x:Name="BtnCadastrar"
@@ -36,7 +52,8 @@
 
             <Button
                 x:Name="BtnAcessar"
-                Text="Acessar conta existente"
+                Text="Acessar"
+                Clicked="OnLoginClicked"
                 BackgroundColor="Transparent"
                 TextColor="#D81B40"
                 BorderColor="#D81B40"
