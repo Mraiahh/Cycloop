@@ -3,50 +3,73 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cycloop.Views.MainPage"
              BackgroundColor="#FFF5F7">
-	<ScrollView>
-		<VerticalStackLayout
-            Padding="30"
-            Spacing="25"
-            VerticalOptions="Center">
 
-            <Label
-                Text="Cycloop"
-                TextColor="#D81B40"
-                FontSize="32"
-                FontAttributes="Bold"
-                HorizontalTextAlignment="Center" />
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Start">
+
+            <Label Text="Cycloop"
+                   TextColor="#D81B40"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
 
             <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
-				<VerticalStackLayout Spacing="10">
-					<Label Text="Seu ciclo atual" FontAttributes="Bold" />
-					<Label Text="Toque no botão abaixo para registrar o início do seu período." TextColor="Gray" />
-				</VerticalStackLayout>
-			</Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Seu ciclo atual" FontAttributes="Bold" />
+                    <Label Text="Toque no botão abaixo para registrar o início do seu período." TextColor="Gray" />
+                </VerticalStackLayout>
+            </Frame>
 
-			<Button
-                x:Name="BtnRegistrar"
-                Text="Registrar Início do Ciclo"
-                Clicked="OnBtnRegistrarClicked"
-                BackgroundColor="#D81B40"
-                TextColor="White"
-                FontSize="18"
-                CornerRadius="25"
-                HeightRequest="60"
-                HorizontalOptions="Fill" />
+            <Button x:Name="BtnRegistrar"
+                    Text="Registrar Início do Ciclo"
+                    Clicked="OnBtnRegistrarClicked"
+                    BackgroundColor="#D81B40"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="25"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill" />
 
-			<Button
-                x:Name="BtnHistorico"
-                Text="Ver Meu Histórico"
-                BackgroundColor="Transparent"
-                TextColor="#D81B40"
-                BorderColor="#D81B40"
-                BorderWidth="1"
-                FontSize="16"
-                CornerRadius="25"
-                HeightRequest="50"
-                HorizontalOptions="Fill" />
+            <Button x:Name="BtnHistorico"
+                    Text="Ver Meu Histórico"
+                    BackgroundColor="Transparent"
+                    TextColor="#D81B40"
+                    BorderColor="#D81B40"
+                    BorderWidth="1"
+                    FontSize="16"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    HorizontalOptions="Fill" />
 
-		</VerticalStackLayout>
-	</ScrollView>
+            <VerticalStackLayout Spacing="10" Padding="0,10,0,0">
+                <Label x:Name="LblMesAno" 
+                       Text="Junho de 2026" 
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       TextColor="#D81B40"/>
 
+                <CollectionView x:Name="GridCalendario" ItemsLayout="VerticalGrid, 7">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="2" Padding="5" HeightRequest="45" WidthRequest="45" StrokeShape="RoundRectangle 8">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BackgroundColor" Value="{Binding CorFundo}" />
+                                    </Style>
+                                </Border.Style>
+
+                                <Label Text="{Binding NumeroDia}" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" 
+                                       TextColor="{Binding CorTexto}" 
+                                       FontAttributes="Bold"/>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

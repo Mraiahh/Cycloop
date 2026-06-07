@@ -19,6 +19,8 @@ namespace Cycloop
     		builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<Data.DatabaseService>();
+            builder.Services.AddTransient<Views.MainPage>();
+            builder.Services.AddTransient<Views.RegistrarCicloPage>();
             return builder.Build();
         }
     }

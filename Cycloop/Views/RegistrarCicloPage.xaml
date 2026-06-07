@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cycloop.Views.RegistrarCicloPage"
+             Title="Registrar Ciclo"
+             BackgroundColor="#FFF5F7">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label Text="Registre seu Período" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#D81B40" 
+                   HorizontalOptions="Center"/>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Quando seu ciclo começou?" FontAttributes="Bold" TextColor="#555555" />
+                <DatePicker x:Name="PickerData" Format="dd/MM/yyyy" MinimumDate="2025-01-01" MaximumDate="2030-12-31"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Duração aproximada (em dias):" FontAttributes="Bold" TextColor="#555555" />
+                <Entry x:Name="EntDuracao" Keyboard="Numeric" Placeholder="Ex: 5" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Intensidade do Fluxo:" FontAttributes="Bold" TextColor="#555555" />
+                <Picker x:Name="PickerFluxo" Title="Selecione a intensidade">
+                    <Picker.Items>
+                        <x:String>Leve</x:String>
+                        <x:String>Moderado</x:String>
+                        <x:String>Intenso</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Cor do Sangue:" FontAttributes="Bold" TextColor="#555555" />
+                <Picker x:Name="PickerCor" Title="Selecione a cor predominante">
+                    <Picker.Items>
+                        <x:String>Vermelho Vivo</x:String>
+                        <x:String>Vermelho Escuro / Marrom</x:String>
+                        <x:String>Rosado</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Nível da Cólica:" FontAttributes="Bold" TextColor="#555555" />
+                <Picker x:Name="PickerColica" Title="Como está a dor?">
+                    <Picker.Items>
+                        <x:String>Nenhuma</x:String>
+                        <x:String>Leve (Suportável)</x:String>
+                        <x:String>Moderada (Incomoda)</x:String>
+                        <x:String>Forte (Preciso de remédio)</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+
+            <Button Text="Salvar Registro"
+                    Clicked="OnSalvarClicked"
+                    BackgroundColor="#D81B40"
+                    TextColor="White"
+                    CornerRadius="25"
+                    HeightRequest="55"
+                    Margin="0,15,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

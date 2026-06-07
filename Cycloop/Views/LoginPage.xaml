@@ -22,8 +22,8 @@
                 TextColor="#555555"
                 FontSize="18"
                 HorizontalTextAlignment="Center" />
-            
-            <Entry x:Name="EmailEntry"
+
+            <Entry x:Name="EntEmail"
                    Placeholder="Email"
                    Keyboard="Email"
                    TextColor="#D81B40"
@@ -31,7 +31,7 @@
                    HeightRequest="50"
                    HorizontalOptions="Fill" />
 
-            <Entry x:Name="SenhaEntry"
+            <Entry x:Name="EntSenha"
                    Placeholder="Senha"
                    IsPassword="True"
                    TextColor="#D81B40"
@@ -65,5 +65,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
